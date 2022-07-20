@@ -41,3 +41,18 @@ function computerPlay() {
         return null
       }
     }
+
+    function lowerCase(text) {
+        return text.toLowerCase()
+      }
+    
+      function game() {
+        let computerScore = 0
+        let playerScore = 0
+    
+        for (let i = 0; i < 5; i++) {
+          const playerSelection = prompt("Rock, Paper or Scissor? ")
+          const computerSelection = computerPlay()
+    
+          const result = playRound(lowerCase(playerSelection), lowerCase(computerSelection))
+    
