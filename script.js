@@ -67,3 +67,17 @@ function computerPlay() {
               break
           }
         }
+
+        console.log("------------------------")
+        console.log("You:", playerScore, "Computer:", computerScore)
+        if (computerScore > playerScore) {
+    
+          console.log("Computer Wins!")
+        } else if (playerScore > computerScore) {
+          console.log("Congratulations! You Win")
+        } else {
+          console.log("It's a Tie!, no one wins")
+        }
+      }
+    
+      game()        
