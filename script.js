@@ -56,3 +56,14 @@ function computerPlay() {
     
           const result = playRound(lowerCase(playerSelection), lowerCase(computerSelection))
     
+          switch (result) {
+            case true:
+              playerScore++
+              break
+            case false:
+              computerScore++
+              break
+            default:
+              break
+          }
+        }
