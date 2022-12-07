@@ -55,3 +55,16 @@ function playRound(computerSelection, playerSelection) {
     results.textContent = `You picked Rock. Computer picked Scissors.\r\nRock beats Scissors. You win.\r\n\r\nPlayer: ${playerWins}\r\nComputer: ${computerWins}`;    
 }
 
+if (playerWins == 5){
+  results.textContent = `You win!\r\n\r\n\r\nPlayer: ${playerWins}\r\nComputer: ${computerWins}`;    
+  gameOver = true;
+  titleButton.classList.add('hidden');
+  setTimeout(showButtons, 500);
+}
+if (computerWins == 5){
+  results.textContent = `You lose!\r\n\r\n\r\nPlayer: ${playerWins}\r\nComputer: ${computerWins}`;    
+  gameOver = true;
+  titleButton.classList.add('hidden');
+  setTimeout(showButtons, 500);
+}
+}
