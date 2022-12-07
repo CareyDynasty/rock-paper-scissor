@@ -68,3 +68,25 @@ if (computerWins == 5){
   setTimeout(showButtons, 500);
 }
 }
+
+function getComputerChoice() {
+  randomChoice = Math.floor(Math.random() * options.length);
+  computer = options[randomChoice];
+}      
+
+const paButton = document.querySelector('#play-again');
+const titleButton = document.querySelector('#title');
+
+paButton.addEventListener('click', () => {
+  let answer;
+      playerWins = 0;
+      computerWins = 0;
+      results.textContent = '';
+      gameOver = false;
+      paButton.classList.add('hidden');
+      titleButton.classList.remove('hidden');
+});
+
+function showButtons() {
+  paButton.classList.remove('hidden');
+};
