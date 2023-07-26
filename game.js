@@ -40,4 +40,34 @@ function playRound(playerSelection) {
       }
 
       results.textContent = `${resultMessage}\r\n\r\nPlayer: ${playerWin}\r\nComputer: ${computerWin}`;
+    // Check if either player has reached 5 wins to end the game
+    if (playerWin === 5) {
+    endGame('You win!');
+     } else if (computerWin === 5) {
+    endGame('You lose!');
+     }
+}
 
+// Function to generate a random computer choice
+function getRandomChoice() {
+    const randomIndex = Math.floor(Math.random() * options.length);
+    return options[randomIndex];
+  }
+  
+  function endGame(message) {
+    results.textContent = `${message}\r\n\r\nPlayer: ${playerWin}\r\nComputer: ${computerWin}`;
+    gameOver = true;
+    document.querySelector('#play-again').classList.remove('hidden');
+  }
+  
+  const playAgainButton = document.querySelector('#play-again');
+  playAgainButton.addEventListener('click', resetGame);
+  
+  function resetGame() {
+    playerWin = 0;
+    computerWin = 0;
+    gameOver = false;
+    results.textContent = '';
+    playAgainButton.classList.add('hidden');
+  }
+ 
